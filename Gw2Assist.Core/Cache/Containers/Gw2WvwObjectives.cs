@@ -10,7 +10,7 @@ using Gw2Assist.Anet.GuildWars2.Api.V2.Requests.Wvw;
 
 namespace Gw2Assist.Core.Cache.Containers
 {
-    public class WvwObjectives : IContainer
+    public class Gw2WvwObjectives : IContainer
     {
         public Dictionary<int, List<Objective>> Contents { get; private set; }
         public string FileFullPath { get; private set; }
