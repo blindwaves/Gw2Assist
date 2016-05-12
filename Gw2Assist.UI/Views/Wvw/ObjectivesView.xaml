@@ -6,7 +6,19 @@
         xmlns:local="clr-namespace:Gw2Assist.UI.Views.Wvw"
         mc:Ignorable="d"
         Title="ObjectivesView" Height="300" Width="300">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <ComboBox
+            ItemsSource="{Binding Worlds}"
+            DisplayMemberPath="Name"
+            SelectedValuePath="Id"
+            SelectedValue="{Binding SelectedWorld}">
+        </ComboBox>
+        <ListView ItemsSource="{Binding Objectives}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
 </Window>
