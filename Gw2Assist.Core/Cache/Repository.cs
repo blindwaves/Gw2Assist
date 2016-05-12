@@ -17,6 +17,8 @@ namespace Gw2Assist.Core.Cache
         private static readonly string StorageFileExtension = "json";
         private static readonly List<string> StoragePossiblePaths = new List<string>();
 
+        private static Dictionary<string, IContainer> Containers;
+
         public static Repository Instance
         {
             get
@@ -37,11 +39,6 @@ namespace Gw2Assist.Core.Cache
         }
 
         /// <summary>
-        /// Gets the files where the information is stored.
-        /// </summary>
-        public Dictionary<string, IContainer> Containers { get; private set; }
-
-        /// <summary>
         /// Gets the directory path where the files are saved.
         /// </summary>
         public string StoragePath { get; private set; }
@@ -53,7 +50,7 @@ namespace Gw2Assist.Core.Cache
             StoragePossiblePaths.Add(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Gw2Assist/Cache");
 
             // Files to store the needed cache data.
-            this.Containers = new Dictionary<string, IContainer>();
+            Containers = new Dictionary<string, IContainer>();
             var type = typeof(IContainer);
             var types = Assembly
                 .GetExecutingAssembly()
@@ -63,7 +60,7 @@ namespace Gw2Assist.Core.Cache
             foreach (var item in types)
             {
                 var container = (IContainer)Activator.CreateInstance(item);
-                this.Containers.Add(container.Name, container);
+                Containers.Add(container.Name, container);
             }
         }
 
@@ -98,7 +95,7 @@ namespace Gw2Assist.Core.Cache
                 if (!string.IsNullOrEmpty(this.StoragePath))
                 {
                     // Assume directory can be created, there is write access.
-                    foreach (var container in this.Containers)
+                    foreach (var container in Containers)
                     {
                         await container.Value.Create(this.StoragePath + "/" + container.Value.Name + "." + StorageFileExtension);
                     }
@@ -108,11 +105,17 @@ namespace Gw2Assist.Core.Cache
             this.Refresh();
         }
 
+        public T GetContainer<T>() where T : IContainer
+        {
+            var container = (T)Activator.CreateInstance(typeof(T));
+            return (T)Containers[container.Name];
+        }
+
         public void Refresh()
         {
             if (string.IsNullOrEmpty(this.StoragePath)) throw new Exception("Cache Repository is not initialized.");
 
-            foreach (var container in this.Containers)
+            foreach (var container in Containers)
             {
                 container.Value.Refresh(this.StoragePath + "/" + container.Value.Name + "." + StorageFileExtension);
             }
