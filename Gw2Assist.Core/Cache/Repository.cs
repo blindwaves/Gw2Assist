@@ -14,7 +14,6 @@ namespace Gw2Assist.Core.Cache
         private static volatile Repository instance = null;
         private static object padLock = new object();
 
-        private static readonly string StorageFileExtension = "json";
         private static readonly List<string> StoragePossiblePaths = new List<string>();
 
         private static Dictionary<string, IContainer> Containers;
@@ -97,7 +96,7 @@ namespace Gw2Assist.Core.Cache
                     // Assume directory can be created, there is write access.
                     foreach (var container in Containers)
                     {
-                        await container.Value.Create(this.StoragePath + "/" + container.Value.Name + "." + StorageFileExtension);
+                        await container.Value.Create(this.StoragePath);
                     }
                 }
             }
@@ -117,7 +116,7 @@ namespace Gw2Assist.Core.Cache
 
             foreach (var container in Containers)
             {
-                container.Value.Refresh(this.StoragePath + "/" + container.Value.Name + "." + StorageFileExtension);
+                container.Value.Refresh(this.StoragePath);
             }
         }
     }

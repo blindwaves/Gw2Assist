@@ -16,9 +16,9 @@ namespace Gw2Assist.Core.Cache.Containers
         public string FileFullPath { get; private set; }
         public string Name { get { return this.GetType().Name; } }
 
-        public async Task Create(string fullPath)
+        public async Task Create(string storagePath)
         {
-            this.FileFullPath = fullPath;
+            this.FileFullPath = storagePath + "/" + this.Name + ".json";
 
             var identifiers = new Dictionary<string, IEnumerable<string>>();
             identifiers.Add("id", new List<string>() { "all" });
@@ -52,9 +52,9 @@ namespace Gw2Assist.Core.Cache.Containers
             }
         }
 
-        public void Refresh(string fullPath)
+        public void Refresh(string storagePath)
         {
-            this.FileFullPath = fullPath;
+            this.FileFullPath = storagePath + "/" + this.Name + ".json";
 
             var wvWObjectives = new Dictionary<int, List<Objective>>();
             List<Objective> objectives = null;

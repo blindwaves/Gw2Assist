@@ -8,7 +8,7 @@ namespace Gw2Assist.Core.Cache.Containers
         string FileFullPath { get; }
         string Name { get; }
 
-        Task Create(string fullPath);
-        void Refresh(string fullPath);
+        Task Create(string storagePath);
+        void Refresh(string storagePath);
     }
 }
