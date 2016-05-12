@@ -101,6 +101,8 @@ namespace Gw2Assist.Core.Cache
                 }
             }
 
+            if (string.IsNullOrEmpty(this.StoragePath)) throw new Exception("Cache storage location cannot be created.");
+
             this.Refresh();
         }
 
@@ -112,7 +114,7 @@ namespace Gw2Assist.Core.Cache
 
         public void Refresh()
         {
-            if (string.IsNullOrEmpty(this.StoragePath)) throw new Exception("Cache Repository is not initialized.");
+            if (string.IsNullOrEmpty(this.StoragePath)) this.Initialize();
 
             foreach (var container in Containers)
             {
