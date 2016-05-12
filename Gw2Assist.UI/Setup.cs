@@ -23,7 +23,10 @@ namespace Gw2Assist.UI
         {
             this.simpleContainer.Singleton<IWindowManager, WindowManager>();
             this.simpleContainer.Singleton<IEventAggregator, EventAggregator>();
+
             this.simpleContainer.PerRequest<ViewModels.MainViewModel>();
+            this.simpleContainer.PerRequest<ViewModels.AboutViewModel>();
+            this.simpleContainer.PerRequest<ViewModels.Wvw.ObjectivesViewModel>();
         }
 
         protected override void BuildUp(object instance)

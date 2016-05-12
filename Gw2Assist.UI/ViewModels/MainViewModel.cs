@@ -2,14 +2,12 @@
 
 namespace Gw2Assist.UI.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainViewModel : Conductor<IScreen>, IConductActiveItem
     {
-        private readonly IEventAggregator eventAggregator;
         private readonly IWindowManager windowManager;
 
-        public MainViewModel(IWindowManager windowManager, IEventAggregator eventAggregator)
+        public MainViewModel(IWindowManager windowManager)
         {
-            this.eventAggregator = eventAggregator;
             this.windowManager = windowManager;
         }
 
@@ -20,12 +18,12 @@ namespace Gw2Assist.UI.ViewModels
 
         public void OpenAbout()
         {
-            this.windowManager.ShowWindow(new AboutViewModel());
+            this.windowManager.ShowWindow(IoC.Get<AboutViewModel>());
         }
 
         public void OpenWvwObjectives()
         {
-            this.windowManager.ShowWindow(new Wvw.ObjectivesViewModel(this.eventAggregator));
+            this.windowManager.ShowWindow(IoC.Get<Wvw.ObjectivesViewModel>());
         }
     }
 }
