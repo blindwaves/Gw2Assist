@@ -45,7 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cache\Containers\IContainer.cs" />
-    <Compile Include="Cache\Containers\WvwObjectives.cs" />
+    <Compile Include="Cache\Containers\Gw2Worlds.cs" />
+    <Compile Include="Cache\Containers\Gw2WvwObjectives.cs" />
     <Compile Include="Cache\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler\Dispatcher.cs" />
