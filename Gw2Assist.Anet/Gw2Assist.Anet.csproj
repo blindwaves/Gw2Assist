@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\JsonStringEnumConverter.cs" />
+    <Compile Include="Converters\JsonStringPoint3DConverter.cs" />
+    <Compile Include="Converters\JsonStringPoint2DConverter.cs" />
     <Compile Include="Core\Drawing\Point3D.cs" />
     <Compile Include="Core\Drawing\Point2D.cs" />
     <Compile Include="GuildWars2\Api\IHttpRequest.cs" />

@@ -12,10 +12,5 @@
             this.Y = y;
             this.Z = z;
         }
-
-        public static Point3D Convert(float[] value)
-        {
-            return new Point3D(value[0], value[1], value[2]);
-        }
     }
 }

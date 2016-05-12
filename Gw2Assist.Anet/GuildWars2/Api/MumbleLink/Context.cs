@@ -26,7 +26,7 @@ namespace Gw2Assist.Anet.GuildWars2.Api.MumbleLink
 
             this.MapId = (int)mumbleContext.mapId;
             this.MapType = (int)mumbleContext.mapType;
-            this.Position = Point3D.Convert(value.fAvatarPosition);
+            this.Position = new Point3D(value.fAvatarPosition[0], value.fAvatarPosition[1], value.fAvatarPosition[2]);
         }
     }
 }

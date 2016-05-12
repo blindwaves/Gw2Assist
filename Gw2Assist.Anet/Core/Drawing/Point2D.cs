@@ -10,10 +10,5 @@
             this.X = x;
             this.Y = y;
         }
-
-        public static Point2D Convert(float[] value)
-        {
-            return new Point2D(value[0], value[1]);
-        }
     }
 }
