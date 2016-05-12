@@ -45,8 +45,8 @@ namespace Gw2Assist.Core.Cache
         private Repository()
         {
             // Possible places to store the cache files.
-            StoragePossiblePaths.Add("Cache");
-            StoragePossiblePaths.Add(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/Gw2Assist/Cache");
+            StoragePossiblePaths.Add(Directory.GetCurrentDirectory() + "\\Cache");
+            StoragePossiblePaths.Add(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Gw2Assist\\Cache");
 
             // Files to store the needed cache data.
             Containers = new Dictionary<string, IContainer>();
