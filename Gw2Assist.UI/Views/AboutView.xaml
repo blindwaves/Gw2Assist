@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="Gw2Assist - About" Height="300" Width="300" ResizeMode="NoResize" WindowStyle="ToolWindow">
     <Grid>
-        <Label x:Name="Version"></Label>
+        <TextBlock Text="{Binding Version}" />
     </Grid>
 </Window>
