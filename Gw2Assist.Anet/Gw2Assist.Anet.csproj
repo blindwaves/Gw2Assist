@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DE72080-E96A-43F3-84EE-7334C0F770E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gw2Assist.Anet</RootNamespace>
+    <AssemblyName>Gw2Assist.Anet</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\JsonStringEnumConverter.cs" />
+    <Compile Include="Core\Drawing\Point3D.cs" />
+    <Compile Include="Core\Drawing\Point2D.cs" />
+    <Compile Include="GuildWars2\Api\IHttpRequest.cs" />
+    <Compile Include="GuildWars2\Api\HttpServiceClient.cs" />
+    <Compile Include="GuildWars2\Api\MumbleLink\Context.cs" />
+    <Compile Include="GuildWars2\Api\MumbleLink\Interop\LinkedMem.cs" />
+    <Compile Include="GuildWars2\Api\MumbleLink\Interop\MumbleContext.cs" />
+    <Compile Include="GuildWars2\Api\MumbleLink\MemorySharedFile.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Enums\BonusType.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Enums\BorderlandColor.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Enums\MapType.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Enums\ObjectiveType.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Enums\PopulationLevel.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\JsonSerializer.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\World.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\Wvw\Bonus.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\Wvw\Borderland.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\Wvw\Map.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\Wvw\Match.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Models\Wvw\Objective.cs" />
+    <Compile Include="GuildWars2\Api\V2\Core\Repository.cs" />
+    <Compile Include="GuildWars2\Api\V2\Requests\HttpRequest.cs" />
+    <Compile Include="GuildWars2\Api\V2\Requests\Worlds.cs" />
+    <Compile Include="GuildWars2\Api\V2\Requests\Wvw\Matches.cs" />
+    <Compile Include="GuildWars2\Api\V2\Requests\Wvw\Objectives.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

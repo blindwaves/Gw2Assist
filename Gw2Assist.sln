@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gw2Assist.Anet", "Gw2Assist.Anet\Gw2Assist.Anet.csproj", "{8DE72080-E96A-43F3-84EE-7334C0F770E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gw2Assist.Core", "Gw2Assist.Core\Gw2Assist.Core.csproj", "{A6134F10-2B5C-4BEE-B0A5-22E6A08B5077}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gw2Assist.UI", "Gw2Assist.UI\Gw2Assist.UI.csproj", "{EBF2026D-5C01-448C-9D87-09BD03B90DDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DE72080-E96A-43F3-84EE-7334C0F770E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DE72080-E96A-43F3-84EE-7334C0F770E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DE72080-E96A-43F3-84EE-7334C0F770E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DE72080-E96A-43F3-84EE-7334C0F770E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6134F10-2B5C-4BEE-B0A5-22E6A08B5077}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6134F10-2B5C-4BEE-B0A5-22E6A08B5077}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6134F10-2B5C-4BEE-B0A5-22E6A08B5077}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6134F10-2B5C-4BEE-B0A5-22E6A08B5077}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF2026D-5C01-448C-9D87-09BD03B90DDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF2026D-5C01-448C-9D87-09BD03B90DDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF2026D-5C01-448C-9D87-09BD03B90DDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF2026D-5C01-448C-9D87-09BD03B90DDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

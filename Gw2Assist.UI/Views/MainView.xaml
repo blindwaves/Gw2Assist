@@ -1,0 +1,23 @@
+﻿<Window x:Class="Gw2Assist.UI.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gw2Assist.UI.Views"
+        xmlns:cal="http://www.caliburnproject.org"
+        mc:Ignorable="d"
+        Title="Gw2Assist" Height="32" Width="32" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Grid x:Name="mainGrid">
+        <Grid.Background>
+            <ImageBrush ImageSource="pack://application:,,,/Assets/Images/btn-menu.png" />
+        </Grid.Background>
+        <Grid.ContextMenu>
+            <ContextMenu>
+                <MenuItem Header="WvW Objectives" cal:Message.Attach="OpenWvwObjectives" />
+                <Separator/>
+                <MenuItem Header="About" cal:Message.Attach="OpenAbout" />
+                <MenuItem Header="Exit" cal:Message.Attach="Close" />
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+</Window>
