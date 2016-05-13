@@ -48,6 +48,8 @@ namespace Gw2Assist.UI
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
+            Application.Current.ShutdownMode = ShutdownMode.OnMainWindowClose;
+
             DisplayRootViewFor<ViewModels.ShellViewModel>();
         }
 
