@@ -21,15 +21,20 @@ namespace Gw2Assist.UI
 
         protected override void Configure()
         {
+            // Caliburn Micro.
             this.simpleContainer.Singleton<IWindowManager, WindowManager>();
             this.simpleContainer.Singleton<IEventAggregator, EventAggregator>();
 
+            // View Models.
             this.simpleContainer.PerRequest<ViewModels.AboutViewModel>();
             this.simpleContainer.PerRequest<ViewModels.ShellViewModel>();
             this.simpleContainer.PerRequest<ViewModels.Wvw.ObjectivesViewModel>();
 
+            // Services.
             this.simpleContainer.PerRequest<Services.GuildWars2.Worlds>();
             this.simpleContainer.PerRequest<Services.GuildWars2.Wvw.Objectives>();
+
+            this.simpleContainer.Singleton<Services.Settings>();
         }
 
         protected override void BuildUp(object instance)

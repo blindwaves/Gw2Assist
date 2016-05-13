@@ -39,6 +39,8 @@ namespace Gw2Assist.UI.ViewModels.Wvw
             {
                 this.selectedWorld = value;
                 NotifyOfPropertyChange(() => this.SelectedWorld);
+
+                this.settingsService.Update<int>(Services.Settings.Name.Gw2ResidentWorld, this.selectedWorld);
             }
         }
 
@@ -47,19 +49,23 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 
         private readonly IEventAggregator eventAggregator;
         private readonly Services.GuildWars2.Wvw.Objectives objectivesService;
+        private readonly Services.Settings settingsService;
         private readonly Services.GuildWars2.Worlds worldsService;
 
-        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.GuildWars2.Worlds worldsService, Services.GuildWars2.Wvw.Objectives objectivesService)
+        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.Settings settingsService, Services.GuildWars2.Worlds worldsService, Services.GuildWars2.Wvw.Objectives objectivesService)
         {
             this.eventAggregator = eventAggregator;
             this.eventAggregator.Subscribe(this);
 
             this.objectivesService = objectivesService;
+            this.settingsService = settingsService;
             this.worldsService = worldsService;
 
             var tempWorlds = this.worldsService.GetAll().Values.ToList();
             tempWorlds.Sort();
             this.Worlds = new BindableCollection<Gw2Models.GuildWars2.World>(tempWorlds);
+
+            this.SelectedWorld = this.settingsService.Get<int>(Services.Settings.Name.Gw2ResidentWorld);
         }
 
         public void Handle(Gw2CheckAvatarLocation job)

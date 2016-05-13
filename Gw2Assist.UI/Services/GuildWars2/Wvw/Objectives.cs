@@ -7,17 +7,23 @@ namespace Gw2Assist.UI.Services.GuildWars2.Wvw
 {
     public class Objectives
     {
+        private readonly Settings settingsService;
+
         private static Gw2Models.GuildWars2.Wvw.Match CachedWvwMatch;
         private static Dictionary<int, List<Gw2Models.GuildWars2.Wvw.Objective>> CachedWvwObjectives;
 
-        public Objectives()
+        public Objectives(Settings settingsService)
         {
+            this.settingsService = settingsService;
+
             CachedWvwObjectives = Core.Cache.Repository.Instance.GetContainer<Core.Cache.Containers.Gw2WvwObjectives>().Contents;
         }
 
         public List<Gw2Models.GuildWars2.Wvw.Objective> GetAllByAvatarLocation(int worldId, int mapId, Anet.Drawing.Point3D avatarPosition)
         {
-            CachedWvwMatch = Core.Cache.Repository.Instance.GetContainer<Core.Cache.Containers.Gw2WvwMatch>().Contents;
+            var cachedWvwMatch = Core.Cache.Repository.Instance.GetContainer<Core.Cache.Containers.Gw2WvwMatch>();
+            if (cachedWvwMatch.Contents == null) cachedWvwMatch.Refresh(Core.Cache.Repository.Instance.StoragePath, this.settingsService.Get<int>(Settings.Name.Gw2ResidentWorld));
+            CachedWvwMatch = cachedWvwMatch.Contents;
 
             var wvwObjectives = new List<Gw2Models.GuildWars2.Wvw.Objective>();
 

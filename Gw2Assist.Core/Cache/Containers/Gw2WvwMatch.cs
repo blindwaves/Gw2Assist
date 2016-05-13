@@ -11,21 +11,17 @@ namespace Gw2Assist.Core.Cache.Containers
         public string FileFullPath { get; private set; }
         public string Name { get { return this.GetType().Name; } }
 
-        private int worldId;
+        private int worldId = 0;
 
         public Task Create(string storagePath)
         {
-            // TODO: Implement settings and grab the world.
-            this.worldId = 1005;
-            // TODO: NULL check for settings, for new app.
-
-            this.Refresh(storagePath);
-
             return Task.FromResult(false);
         }
 
         public async void Refresh(string storagePath)
         {
+            if (this.worldId == 0) return;
+
             var identifiers = new Dictionary<string, IEnumerable<string>>();
             identifiers.Add("world", new List<string>() { this.worldId.ToString() });
 
@@ -33,6 +29,12 @@ namespace Gw2Assist.Core.Cache.Containers
             request.Identifiers = identifiers;
 
             this.Contents = await Anet.GuildWars2.Api.V2.Repository.Get<Models.GuildWars2.Wvw.Match>(request);
+        }
+
+        public void Refresh(string storagePath, int worldId)
+        {
+            this.worldId = worldId;
+            this.Refresh(storagePath);
         }
     }
 }
