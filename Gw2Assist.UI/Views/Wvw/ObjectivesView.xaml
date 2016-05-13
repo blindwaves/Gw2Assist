@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Gw2Assist.UI.Views.Wvw"
         mc:Ignorable="d"
-        Title="ObjectivesView" Height="300" Width="300">
+        Height="300" Width="300">
     <StackPanel>
         <ComboBox
             ItemsSource="{Binding Worlds}"
