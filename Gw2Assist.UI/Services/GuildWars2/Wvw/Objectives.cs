@@ -49,7 +49,12 @@ namespace Gw2Assist.UI.Services.GuildWars2.Wvw
                     }
 
                     // TODO: Calculate distance.
-                    obj.DistanceFromAvatar = 0;
+                    obj.DistanceFromAvatar = obj.Coord.HorizontalDistanceFrom(new Anet.Drawing.Point3D(
+                        // avatarPosition is taken from Mumble, refer to mumble context as it explains it uses metres and left handed coordinates.
+                        Core.Ultilities.UnitConverter.MetersToInches(avatarPosition.X),
+                        Core.Ultilities.UnitConverter.MetersToInches(avatarPosition.Z),
+                        Core.Ultilities.UnitConverter.MetersToInches(avatarPosition.Y)
+                        ));
 
                     wvwObjectives.Add(obj);
                 }

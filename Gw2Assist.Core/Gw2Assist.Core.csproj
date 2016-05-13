@@ -57,6 +57,7 @@
     <Compile Include="Scheduler\Jobs\Gw2UpdateMatchCache.cs" />
     <Compile Include="Scheduler\Jobs\Interfaces\IJob.cs" />
     <Compile Include="Scheduler\Jobs\Gw2CheckAvatarLocation.cs" />
+    <Compile Include="Ultilities\UnitConverter.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
