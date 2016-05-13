@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Gw2Assist.Core.Scheduler.Jobs
+namespace Gw2Assist.Core.Scheduler.Jobs.Interfaces
 {
     public interface IJob
     {

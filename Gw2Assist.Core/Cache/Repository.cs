@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 
-using Gw2Assist.Core.Cache.Containers;
+using Gw2Assist.Core.Cache.Containers.Interfaces;
 
 namespace Gw2Assist.Core.Cache
 {

@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-namespace Gw2Assist.Core.Cache.Containers
+namespace Gw2Assist.Core.Cache.Containers.Interfaces
 {
     public interface IContainer
     {

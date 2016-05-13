@@ -10,7 +10,7 @@ using Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
 
 namespace Gw2Assist.Core.Cache.Containers
 {
-    public class Gw2Worlds : IContainer
+    public class Gw2Worlds : Interfaces.IContainer
     {
         public Dictionary<int, World> Contents { get; private set; }
         public string FileFullPath { get; private set; }

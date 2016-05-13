@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-using Gw2Assist.Core.Scheduler.Jobs;
+using Gw2Assist.Core.Scheduler.Jobs.Interfaces;
 
 namespace Gw2Assist.Core.Scheduler
 {

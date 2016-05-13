@@ -4,7 +4,7 @@ using Gw2Assist.Anet.GuildWars2.Api.MumbleLink;
 
 namespace Gw2Assist.Core.Scheduler.Jobs
 {
-    public class Gw2CheckAvatarLocation : IJob
+    public class Gw2CheckAvatarLocation : Interfaces.IJob
     {
         /// <summary>
         /// Gets the interval to run the job.
