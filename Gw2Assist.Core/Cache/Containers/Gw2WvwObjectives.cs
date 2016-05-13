@@ -5,7 +5,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models.Wvw;
+using Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw;
 using Gw2Assist.Anet.GuildWars2.Api.V2.Requests.Wvw;
 
 namespace Gw2Assist.Core.Cache.Containers
@@ -27,11 +27,11 @@ namespace Gw2Assist.Core.Cache.Containers
             request.Identifiers = identifiers;
 
             // This will return all the IDs of the objectives only.
-            var objectives = await Anet.GuildWars2.Api.V2.Core.Repository.GetAll<Objective>(request);
+            var wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Objective>(request);
 
             // Grab the IDs and sent it back to retrieve all the objectives info.
             var objectiveIds = new List<string>();
-            foreach (var obj in objectives)
+            foreach (var obj in wvwObjectives)
             {
                 objectiveIds.Add(obj.Id);
             }
@@ -43,12 +43,12 @@ namespace Gw2Assist.Core.Cache.Containers
             request.Identifiers = identifiers;
 
             // This will contain all the objectives information.
-            objectives = await Anet.GuildWars2.Api.V2.Core.Repository.GetAll<Objective>(request);
+            wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Objective>(request);
 
             using (var fstream = new FileStream(this.FileFullPath, FileMode.Create))
             using (var writer = new StreamWriter(fstream))
             {
-                writer.WriteLine(JsonConvert.SerializeObject(objectives, Formatting.Indented));
+                writer.WriteLine(JsonConvert.SerializeObject(wvwObjectives, Formatting.Indented));
             }
         }
 

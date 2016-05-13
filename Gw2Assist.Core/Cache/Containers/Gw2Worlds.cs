@@ -5,7 +5,7 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models;
+using Gw2Assist.Anet.GuildWars2.Api.V2.Models;
 using Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
 
 namespace Gw2Assist.Core.Cache.Containers
@@ -26,8 +26,7 @@ namespace Gw2Assist.Core.Cache.Containers
             var request = new Worlds();
             request.Identifiers = identifiers;
 
-            // This will return all the IDs of the objectives only.
-            var worlds = await Anet.GuildWars2.Api.V2.Core.Repository.GetAll<World>(request);
+            var worlds = await Anet.GuildWars2.Api.V2.Repository.GetAll<World>(request);
 
             using (var fstream = new FileStream(this.FileFullPath, FileMode.Create))
             using (var writer = new StreamWriter(fstream))

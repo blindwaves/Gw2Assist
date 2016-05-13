@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Gw2Assist.Anet.GuildWars2.Api.V2.Requests
 {
-    public abstract class HttpRequest : IHttpRequest
+    public abstract class HttpRequest : Interfaces.IHttpRequest
     {
         public IEnumerable<KeyValuePair<string, IEnumerable<string>>> Identifiers { get; set; }
 

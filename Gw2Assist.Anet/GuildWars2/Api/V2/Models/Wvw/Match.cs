@@ -3,9 +3,7 @@ using System.Collections.Generic;
 
 using Newtonsoft.Json;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Enums;
-
-namespace Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models.Wvw
+namespace Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw
 {
     public class Match
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Gw2Assist.Anet.GuildWars2.Api
+namespace Gw2Assist.Anet.GuildWars2.Api.Interfaces
 {
     public interface IHttpRequest
     {

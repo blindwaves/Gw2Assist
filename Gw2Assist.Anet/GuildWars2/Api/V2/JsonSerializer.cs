@@ -2,7 +2,7 @@
 
 using Gw2Assist.Anet.Converters;
 
-namespace Gw2Assist.Anet.GuildWars2.Api.V2.Core
+namespace Gw2Assist.Anet.GuildWars2.Api.V2
 {
     public class JsonSerializer
     {

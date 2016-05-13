@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 using Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
 
-namespace Gw2Assist.Anet.GuildWars2.Api.V2.Core
+namespace Gw2Assist.Anet.GuildWars2.Api.V2
 {
     public static class Repository
     {

@@ -1,4 +1,4 @@
-﻿namespace Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models.Wvw
+﻿namespace Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw
 {
     public class Bonus
     {

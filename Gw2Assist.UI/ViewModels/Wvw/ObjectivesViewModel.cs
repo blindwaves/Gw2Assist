@@ -2,8 +2,8 @@
 
 using Caliburn.Micro;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models;
-using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models.Wvw;
+using Gw2Assist.Anet.GuildWars2.Api.V2.Models;
+using Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw;
 using Gw2Assist.Core.Scheduler.Jobs;
 
 namespace Gw2Assist.UI.ViewModels.Wvw

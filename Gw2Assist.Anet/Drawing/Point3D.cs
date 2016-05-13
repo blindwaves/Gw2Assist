@@ -1,4 +1,4 @@
-﻿namespace Gw2Assist.Anet.Core.Drawing
+﻿namespace Gw2Assist.Anet.Drawing
 {
     public class Point3D
     {

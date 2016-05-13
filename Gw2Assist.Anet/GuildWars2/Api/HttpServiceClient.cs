@@ -21,7 +21,7 @@ namespace Gw2Assist.Anet.GuildWars2.Api
         /// <param name="resourcePath">The end path of the resource relative to the base URI.</param>
         /// <param name="parameters">The GET parameters to pass to the server.</param>
         /// <returns>A JSON response string.</returns>
-        public async Task<string> GetAsync(IHttpRequest request)
+        public async Task<string> GetAsync(Interfaces.IHttpRequest request)
         {
             // http://codereview.stackexchange.com/a/91931
             var stringBuilder = new StringBuilder();

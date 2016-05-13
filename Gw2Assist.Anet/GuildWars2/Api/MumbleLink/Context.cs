@@ -7,7 +7,7 @@
 // </summary>
 using System.Runtime.InteropServices;
 
-using Gw2Assist.Anet.Core.Drawing;
+using Gw2Assist.Anet.Drawing;
 
 namespace Gw2Assist.Anet.GuildWars2.Api.MumbleLink
 {

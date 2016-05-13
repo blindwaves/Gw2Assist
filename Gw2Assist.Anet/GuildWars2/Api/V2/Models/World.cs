@@ -1,6 +1,6 @@
-﻿using Gw2Assist.Anet.GuildWars2.Api.V2.Core.Enums;
+﻿using Gw2Assist.Anet.GuildWars2.Api.V2.Enums;
 
-namespace Gw2Assist.Anet.GuildWars2.Api.V2.Core.Models
+namespace Gw2Assist.Anet.GuildWars2.Api.V2.Models
 {
     public class World
     {
