@@ -48,14 +48,14 @@
     <Compile Include="Cache\Containers\Gw2Worlds.cs" />
     <Compile Include="Cache\Containers\Gw2WvwObjectives.cs" />
     <Compile Include="Cache\Repository.cs" />
+    <Compile Include="Models\World.cs" />
+    <Compile Include="Models\Wvw\Objective.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler\Dispatcher.cs" />
     <Compile Include="Scheduler\Jobs\Interfaces\IJob.cs" />
     <Compile Include="Scheduler\Jobs\Gw2CheckAvatarLocation.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Gw2Assist.Anet\Gw2Assist.Anet.csproj">
       <Project>{8de72080-e96a-43f3-84ee-7334c0f770e4}</Project>

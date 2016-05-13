@@ -5,14 +5,13 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw;
-using Gw2Assist.Anet.GuildWars2.Api.V2.Requests.Wvw;
+using Gw2ApiRequest = Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
 
 namespace Gw2Assist.Core.Cache.Containers
 {
     public class Gw2WvwObjectives : Interfaces.IContainer
     {
-        public Dictionary<int, List<Objective>> Contents { get; private set; }
+        public Dictionary<int, List<Core.Models.Wvw.Objective>> Contents { get; private set; }
         public string FileFullPath { get; private set; }
         public string Name { get { return this.GetType().Name; } }
 
@@ -23,11 +22,11 @@ namespace Gw2Assist.Core.Cache.Containers
             var identifiers = new Dictionary<string, IEnumerable<string>>();
             identifiers.Add("id", new List<string>() { "all" });
 
-            var request = new Objectives();
+            var request = new Gw2ApiRequest.Wvw.Objectives();
             request.Identifiers = identifiers;
 
             // This will return all the IDs of the objectives only.
-            var wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Objective>(request);
+            var wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Models.Wvw.Objective>(request);
 
             // Grab the IDs and sent it back to retrieve all the objectives info.
             var objectiveIds = new List<string>();
@@ -39,11 +38,11 @@ namespace Gw2Assist.Core.Cache.Containers
             identifiers = new Dictionary<string, IEnumerable<string>>();
             identifiers.Add("id", objectiveIds);
 
-            request = new Objectives();
+            request = new Gw2ApiRequest.Wvw.Objectives();
             request.Identifiers = identifiers;
 
             // This will contain all the objectives information.
-            wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Objective>(request);
+            wvwObjectives = await Anet.GuildWars2.Api.V2.Repository.GetAll<Models.Wvw.Objective>(request);
 
             using (var fstream = new FileStream(this.FileFullPath, FileMode.Create))
             using (var writer = new StreamWriter(fstream))
@@ -56,19 +55,19 @@ namespace Gw2Assist.Core.Cache.Containers
         {
             this.FileFullPath = storagePath + "/" + this.Name + ".json";
 
-            var wvWObjectives = new Dictionary<int, List<Objective>>();
-            List<Objective> objectives = null;
+            var wvWObjectives = new Dictionary<int, List<Models.Wvw.Objective>>();
+            List<Models.Wvw.Objective> objectives = null;
 
             using (var reader = new StreamReader(this.FileFullPath, Encoding.UTF8))
             {
-                objectives = JsonConvert.DeserializeObject<List<Objective>>(reader.ReadToEnd());
+                objectives = JsonConvert.DeserializeObject<List<Models.Wvw.Objective>>(reader.ReadToEnd());
             }
 
             foreach (var obj in objectives)
             {
                 if (!wvWObjectives.ContainsKey(obj.MapId))
                 {
-                    wvWObjectives.Add(obj.MapId, new List<Objective>());
+                    wvWObjectives.Add(obj.MapId, new List<Models.Wvw.Objective>());
                 }
                 wvWObjectives[obj.MapId].Add(obj);
             }

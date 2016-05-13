@@ -5,14 +5,13 @@ using System.Text;
 
 using Newtonsoft.Json;
 
-using Gw2Assist.Anet.GuildWars2.Api.V2.Models;
-using Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
+using Gw2ApiRequest = Gw2Assist.Anet.GuildWars2.Api.V2.Requests;
 
 namespace Gw2Assist.Core.Cache.Containers
 {
     public class Gw2Worlds : Interfaces.IContainer
     {
-        public Dictionary<int, World> Contents { get; private set; }
+        public Dictionary<int, Models.World> Contents { get; private set; }
         public string FileFullPath { get; private set; }
         public string Name { get { return this.GetType().Name; } }
 
@@ -23,10 +22,10 @@ namespace Gw2Assist.Core.Cache.Containers
             var identifiers = new Dictionary<string, IEnumerable<string>>();
             identifiers.Add("id", new List<string>() { "all" });
 
-            var request = new Worlds();
+            var request = new Gw2ApiRequest.Worlds();
             request.Identifiers = identifiers;
 
-            var worlds = await Anet.GuildWars2.Api.V2.Repository.GetAll<World>(request);
+            var worlds = await Anet.GuildWars2.Api.V2.Repository.GetAll<Models.World>(request);
 
             using (var fstream = new FileStream(this.FileFullPath, FileMode.Create))
             using (var writer = new StreamWriter(fstream))
@@ -39,12 +38,12 @@ namespace Gw2Assist.Core.Cache.Containers
         {
             this.FileFullPath = storagePath + "/" + this.Name + ".json";
 
-            var gw2Worlds = new Dictionary<int, World>();
-            List<World> worlds = null;
+            var gw2Worlds = new Dictionary<int, Models.World>();
+            List<Models.World> worlds = null;
 
             using (var reader = new StreamReader(this.FileFullPath, Encoding.UTF8))
             {
-                worlds = JsonConvert.DeserializeObject<List<World>>(reader.ReadToEnd());
+                worlds = JsonConvert.DeserializeObject<List<Models.World>>(reader.ReadToEnd());
             }
 
             foreach (var world in worlds)

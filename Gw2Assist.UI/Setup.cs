@@ -27,6 +27,8 @@ namespace Gw2Assist.UI
             this.simpleContainer.PerRequest<ViewModels.AboutViewModel>();
             this.simpleContainer.PerRequest<ViewModels.ShellViewModel>();
             this.simpleContainer.PerRequest<ViewModels.Wvw.ObjectivesViewModel>();
+
+            this.simpleContainer.PerRequest<Services.Wvw.Objectives>();
         }
 
         protected override void BuildUp(object instance)
