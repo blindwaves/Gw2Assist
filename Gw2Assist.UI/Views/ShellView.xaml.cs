@@ -5,11 +5,11 @@ namespace Gw2Assist.UI.Views
     /// <summary>
     /// Interaction logic for MainView.xaml
     /// </summary>
-    public partial class MainView : Window
+    public partial class ShellView : Window
     {
         private bool WindowIsBeingDragged = false;
 
-        public MainView()
+        public ShellView()
         {
             InitializeComponent();
         }

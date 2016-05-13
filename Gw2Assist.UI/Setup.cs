@@ -24,8 +24,8 @@ namespace Gw2Assist.UI
             this.simpleContainer.Singleton<IWindowManager, WindowManager>();
             this.simpleContainer.Singleton<IEventAggregator, EventAggregator>();
 
-            this.simpleContainer.PerRequest<ViewModels.MainViewModel>();
             this.simpleContainer.PerRequest<ViewModels.AboutViewModel>();
+            this.simpleContainer.PerRequest<ViewModels.ShellViewModel>();
             this.simpleContainer.PerRequest<ViewModels.Wvw.ObjectivesViewModel>();
         }
 
@@ -48,7 +48,7 @@ namespace Gw2Assist.UI
 
         protected override void OnStartup(object sender, StartupEventArgs e)
         {
-            DisplayRootViewFor<ViewModels.MainViewModel>();
+            DisplayRootViewFor<ViewModels.ShellViewModel>();
         }
 
         private void InitializeComponent()

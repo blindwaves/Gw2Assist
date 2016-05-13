@@ -2,11 +2,11 @@
 
 namespace Gw2Assist.UI.ViewModels
 {
-    public class MainViewModel : Conductor<IScreen>, IConductActiveItem
+    public class ShellViewModel : Conductor<IScreen>, IConductActiveItem
     {
         private readonly IWindowManager windowManager;
 
-        public MainViewModel(IWindowManager windowManager)
+        public ShellViewModel(IWindowManager windowManager)
         {
             this.windowManager = windowManager;
         }
