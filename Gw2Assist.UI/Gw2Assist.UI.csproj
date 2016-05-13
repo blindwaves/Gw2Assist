@@ -75,6 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Services\Worlds.cs" />
     <Compile Include="Services\Wvw\Objectives.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />

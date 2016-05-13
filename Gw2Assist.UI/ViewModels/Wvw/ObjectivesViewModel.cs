@@ -1,4 +1,6 @@
-﻿using Caliburn.Micro;
+﻿using System.Linq;
+
+using Caliburn.Micro;
 
 using Gw2Models = Gw2Assist.Core.Models;
 using Gw2Assist.Core.Scheduler.Jobs;
@@ -45,13 +47,17 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 
         private readonly IEventAggregator eventAggregator;
         private readonly Services.Wvw.Objectives objectivesService;
+        private readonly Services.Worlds worldsService;
 
-        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.Wvw.Objectives objectivesService)
+        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.Worlds worldsService, Services.Wvw.Objectives objectivesService)
         {
             this.eventAggregator = eventAggregator;
             this.eventAggregator.Subscribe(this);
 
             this.objectivesService = objectivesService;
+            this.worldsService = worldsService;
+
+            this.Worlds = new BindableCollection<Gw2Models.World>(this.worldsService.GetAll().Values.ToList());
         }
 
         public void Handle(Gw2CheckAvatarLocation job)
