@@ -15,6 +15,13 @@ namespace Gw2Assist.Anet.GuildWars2.Api.MumbleLink
     {
         public int MapId { get; set; }
         public int MapType { get; set; }
+
+        /// <summary>
+        /// Gets or sets the avatar position.
+        /// Mumble : Uses left handed coordinate system, you have to use the x,z coordinates (not x,y). The x,y,z coords are in metres.
+        /// For more details:
+        /// https://forum-en.guildwars2.com/forum/community/api/Event-Details-API-location-coordinates/3546948
+        /// </summary>
         public Point3D Position { get; set; }
 
         public Context(MumbleLink.Interop.LinkedMem value)

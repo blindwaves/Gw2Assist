@@ -11,7 +11,7 @@ namespace Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw
     public class Objective
     {
         /// <summary>
-        /// Gets or sets the coordinates (X, Y, Z) of the objective marker on the map.
+        /// Gets or sets the coordinates (X, Y, Z) of the objective marker on the map. Coordinates are given in inches.
         /// </summary>
         [JsonConverter(typeof(JsonStringPoint3DConverter))]
         public Point3D Coord { get; set; }
@@ -34,7 +34,7 @@ namespace Gw2Assist.Anet.GuildWars2.Api.V2.Models.Wvw
         public string Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the coordinates (X, Y) of the sector centroid.
+        /// Gets or sets the coordinates (X, Y) of the sector centroid. Coordinates are given in inches.
         /// </summary>
         [JsonProperty("label_coord")]
         [JsonConverter(typeof(JsonStringPoint2DConverter))]
