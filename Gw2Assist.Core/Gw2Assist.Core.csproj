@@ -44,14 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\Containers\Gw2WvwMatch.cs" />
     <Compile Include="Cache\Containers\Interfaces\IContainer.cs" />
     <Compile Include="Cache\Containers\Gw2Worlds.cs" />
     <Compile Include="Cache\Containers\Gw2WvwObjectives.cs" />
     <Compile Include="Cache\Repository.cs" />
     <Compile Include="Models\World.cs" />
+    <Compile Include="Models\Wvw\Match.cs" />
     <Compile Include="Models\Wvw\Objective.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler\Dispatcher.cs" />
+    <Compile Include="Scheduler\Jobs\Gw2UpdateMatchCache.cs" />
     <Compile Include="Scheduler\Jobs\Interfaces\IJob.cs" />
     <Compile Include="Scheduler\Jobs\Gw2CheckAvatarLocation.cs" />
   </ItemGroup>
