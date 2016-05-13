@@ -12,5 +12,10 @@
             this.Y = y;
             this.Z = z;
         }
+
+        public double HorizontalDistanceFrom(Point3D point)
+        {
+            return (new Point2D(this.X, this.Y).DistanceFrom(new Point2D(point.X, point.Y)));
+        }
     }
 }

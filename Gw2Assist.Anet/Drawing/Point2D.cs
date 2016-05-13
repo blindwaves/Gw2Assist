@@ -1,4 +1,6 @@
-﻿namespace Gw2Assist.Anet.Drawing
+﻿using System;
+
+namespace Gw2Assist.Anet.Drawing
 {
     public class Point2D
     {
@@ -9,6 +11,11 @@
         {
             this.X = x;
             this.Y = y;
+        }
+
+        public double DistanceFrom(Point2D point)
+        {
+            return Math.Sqrt(((this.X - point.X) * (this.X - point.X)) + ((this.Y - point.Y) * (this.Y - point.Y)));
         }
     }
 }
