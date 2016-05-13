@@ -2,7 +2,7 @@
 
 using Gw2Models = Gw2Assist.Core.Models;
 
-namespace Gw2Assist.UI.Services
+namespace Gw2Assist.UI.Services.GuildWars2
 {
     public class Worlds
     {

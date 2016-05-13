@@ -46,10 +46,10 @@ namespace Gw2Assist.UI.ViewModels.Wvw
         private Anet.Drawing.Point3D mapPosition;
 
         private readonly IEventAggregator eventAggregator;
-        private readonly Services.Wvw.Objectives objectivesService;
-        private readonly Services.Worlds worldsService;
+        private readonly Services.GuildWars2.Wvw.Objectives objectivesService;
+        private readonly Services.GuildWars2.Worlds worldsService;
 
-        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.Worlds worldsService, Services.Wvw.Objectives objectivesService)
+        public ObjectivesViewModel(IEventAggregator eventAggregator, Services.GuildWars2.Worlds worldsService, Services.GuildWars2.Wvw.Objectives objectivesService)
         {
             this.eventAggregator = eventAggregator;
             this.eventAggregator.Subscribe(this);
@@ -87,7 +87,7 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 
             if (mapIdChanged || mapPositionChanged)
             {
-                this.Objectives = new BindableCollection<Gw2Models.Wvw.Objective>(this.objectivesService.GetAllByMapId(this.mapId, this.mapPosition));
+                this.Objectives = new BindableCollection<Gw2Models.Wvw.Objective>(this.objectivesService.GetAllByAvatarLocation(this.SelectedWorld, this.mapId, this.mapPosition));
             }
         }
     }

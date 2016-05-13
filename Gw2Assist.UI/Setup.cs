@@ -28,8 +28,8 @@ namespace Gw2Assist.UI
             this.simpleContainer.PerRequest<ViewModels.ShellViewModel>();
             this.simpleContainer.PerRequest<ViewModels.Wvw.ObjectivesViewModel>();
 
-            this.simpleContainer.PerRequest<Services.Worlds>();
-            this.simpleContainer.PerRequest<Services.Wvw.Objectives>();
+            this.simpleContainer.PerRequest<Services.GuildWars2.Worlds>();
+            this.simpleContainer.PerRequest<Services.GuildWars2.Wvw.Objectives>();
         }
 
         protected override void BuildUp(object instance)
