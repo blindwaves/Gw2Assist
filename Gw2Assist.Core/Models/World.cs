@@ -2,8 +2,11 @@
 
 namespace Gw2Assist.Core.Models
 {
-    public class World : Gw2Models.World
+    public class World : Gw2Models.World, System.IComparable<World>
     {
-        
+        public int CompareTo(World world)
+        {
+            return this.Name.CompareTo(world.Name);
+        }
     }
 }

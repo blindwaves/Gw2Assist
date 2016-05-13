@@ -57,7 +57,9 @@ namespace Gw2Assist.UI.ViewModels.Wvw
             this.objectivesService = objectivesService;
             this.worldsService = worldsService;
 
-            this.Worlds = new BindableCollection<Gw2Models.World>(this.worldsService.GetAll().Values.ToList());
+            var tempWorlds = this.worldsService.GetAll().Values.ToList();
+            tempWorlds.Sort();
+            this.Worlds = new BindableCollection<Gw2Models.World>(tempWorlds);
         }
 
         public void Handle(Gw2CheckAvatarLocation job)
