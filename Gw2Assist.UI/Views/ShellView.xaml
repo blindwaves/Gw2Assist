@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Gw2Assist.UI.Views"
         xmlns:cal="http://www.caliburnproject.org"
         mc:Ignorable="d"
-        Title="Gw2Assist" Height="32" Width="32" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+        Height="32" Width="32" MouseLeftButtonUp="Window_MouseLeftButtonUp" MouseMove="Window_MouseMove" ResizeMode="NoResize" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
     <Grid x:Name="mainGrid">
         <Grid.Background>
             <ImageBrush ImageSource="pack://application:,,,/Assets/Images/btn-menu.png" />
