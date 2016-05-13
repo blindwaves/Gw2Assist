@@ -7,7 +7,7 @@ namespace Gw2Assist.Core.Cache.Containers
 {
     public class Gw2WvwMatch : Interfaces.IContainer
     {
-        public Models.Wvw.Match Contents { get; private set; }
+        public Models.GuildWars2.Wvw.Match Contents { get; private set; }
         public string FileFullPath { get; private set; }
         public string Name { get { return this.GetType().Name; } }
 
@@ -32,7 +32,7 @@ namespace Gw2Assist.Core.Cache.Containers
             var request = new Gw2ApiRequest.Wvw.Matches();
             request.Identifiers = identifiers;
 
-            this.Contents = await Anet.GuildWars2.Api.V2.Repository.Get<Models.Wvw.Match>(request);
+            this.Contents = await Anet.GuildWars2.Api.V2.Repository.Get<Models.GuildWars2.Wvw.Match>(request);
         }
     }
 }

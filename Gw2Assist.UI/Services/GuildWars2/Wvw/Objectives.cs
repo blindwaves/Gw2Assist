@@ -7,19 +7,19 @@ namespace Gw2Assist.UI.Services.GuildWars2.Wvw
 {
     public class Objectives
     {
-        private static Gw2Models.Wvw.Match CachedWvwMatch;
-        private static Dictionary<int, List<Gw2Models.Wvw.Objective>> CachedWvwObjectives;
+        private static Gw2Models.GuildWars2.Wvw.Match CachedWvwMatch;
+        private static Dictionary<int, List<Gw2Models.GuildWars2.Wvw.Objective>> CachedWvwObjectives;
 
         public Objectives()
         {
             CachedWvwObjectives = Core.Cache.Repository.Instance.GetContainer<Core.Cache.Containers.Gw2WvwObjectives>().Contents;
         }
 
-        public List<Gw2Models.Wvw.Objective> GetAllByAvatarLocation(int worldId, int mapId, Anet.Drawing.Point3D avatarPosition)
+        public List<Gw2Models.GuildWars2.Wvw.Objective> GetAllByAvatarLocation(int worldId, int mapId, Anet.Drawing.Point3D avatarPosition)
         {
             CachedWvwMatch = Core.Cache.Repository.Instance.GetContainer<Core.Cache.Containers.Gw2WvwMatch>().Contents;
 
-            var wvwObjectives = new List<Gw2Models.Wvw.Objective>();
+            var wvwObjectives = new List<Gw2Models.GuildWars2.Wvw.Objective>();
 
             if (CachedWvwObjectives.ContainsKey(mapId))
             {
@@ -51,7 +51,7 @@ namespace Gw2Assist.UI.Services.GuildWars2.Wvw
                 return wvwObjectives;
             }
 
-            return new List<Gw2Models.Wvw.Objective>();
+            return new List<Gw2Models.GuildWars2.Wvw.Objective>();
         }
     }
 }

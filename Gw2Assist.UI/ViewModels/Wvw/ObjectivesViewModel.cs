@@ -9,8 +9,8 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 {
     public class ObjectivesViewModel : BaseViewModel, IHandle<Gw2CheckAvatarLocation>
     {
-        private BindableCollection<Gw2Models.Wvw.Objective> objectives;
-        public BindableCollection<Gw2Models.Wvw.Objective> Objectives
+        private BindableCollection<Gw2Models.GuildWars2.Wvw.Objective> objectives;
+        public BindableCollection<Gw2Models.GuildWars2.Wvw.Objective> Objectives
         {
             get { return this.objectives; }
             set
@@ -20,8 +20,8 @@ namespace Gw2Assist.UI.ViewModels.Wvw
             }
         }
 
-        private BindableCollection<Gw2Models.World> worlds;
-        public BindableCollection<Gw2Models.World> Worlds
+        private BindableCollection<Gw2Models.GuildWars2.World> worlds;
+        public BindableCollection<Gw2Models.GuildWars2.World> Worlds
         {
             get { return this.worlds; }
             set
@@ -59,7 +59,7 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 
             var tempWorlds = this.worldsService.GetAll().Values.ToList();
             tempWorlds.Sort();
-            this.Worlds = new BindableCollection<Gw2Models.World>(tempWorlds);
+            this.Worlds = new BindableCollection<Gw2Models.GuildWars2.World>(tempWorlds);
         }
 
         public void Handle(Gw2CheckAvatarLocation job)
@@ -89,7 +89,7 @@ namespace Gw2Assist.UI.ViewModels.Wvw
 
             if (mapIdChanged || mapPositionChanged)
             {
-                this.Objectives = new BindableCollection<Gw2Models.Wvw.Objective>(this.objectivesService.GetAllByAvatarLocation(this.SelectedWorld, this.mapId, this.mapPosition));
+                this.Objectives = new BindableCollection<Gw2Models.GuildWars2.Wvw.Objective>(this.objectivesService.GetAllByAvatarLocation(this.SelectedWorld, this.mapId, this.mapPosition));
             }
         }
     }
